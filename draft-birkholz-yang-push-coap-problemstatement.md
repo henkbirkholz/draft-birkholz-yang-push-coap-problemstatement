@@ -81,7 +81,11 @@ parameter of 1 or simply by "forget" the observation and return a CoAP Reset aft
 notification in the context of the subscription. A subscription can also be discarded by the server
 by sending a corresponding response that does not contain an Observe option.
 
-The subscription used in CoAP pub/sub are used to subscribe to a topic provided by a CoAP broker REST API. YANG Push {{-yangpush}} and corresponding YANG Subscribed Notifications are used to subscribe to data node updates provided by a YANG management interface. YANG subscriptions can include a filter expression (either a subtree expression or an XPATH expression). The encoding rules of XPATH expressions in CBOR are covered by {{-yangcbor}}.
+The subscription used in CoAP pub/sub are used to subscribe to a topic provided by a CoAP broker
+REST API. YANG Push {{-yangpush}} and corresponding YANG Subscribed Notifications are used to
+subscribe to data node updates provided by a YANG management interface. YANG subscriptions can
+include a filter expression (either a subtree expression or an XPATH expression). The encoding rules
+of XPATH expressions in CBOR are covered by {{-yangcbor}}.
 
 ## Configured Subscriptions and Call-Home
 
