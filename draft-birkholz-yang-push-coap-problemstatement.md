@@ -1,5 +1,5 @@
 ---
-title: CoAP operations for YANG push via the Concise Management Interface
+title: YANG Push Operations for the CoAP Management Interface
 docname: draft-birkholz-yang-push-coap-problemstatement-latest
 date: 2017-10-10
 
@@ -57,7 +57,7 @@ informative:
 
 This document provides a problem statement, derives an initial gap analysis and
 illustrates a first set of solution approaches in regard to augmenting YANG
-data stores based on the Concise Management Interface with YANG Push
+data stores based on the CoAP Management Interface with YANG Push
 capabilities. A binary transfer mechanism for YANG Subscribed Notifications
 addresses both the requirements of constrained-node networks and the need for
 semantic interoperability via self-descriptiveness of the corresponding data in
@@ -75,8 +75,8 @@ provide a problem statement.
 
 ## Binary YANG transfer protocol
 
-The Concise Management Interface I-D (CoMI {{-comi}}) defines operations for a
-YANG data store based on the Concise Application Protocol (CoAP {{RFC7252}}).
+The CoAP Management Interface I-D (CoMI {{-comi}}) defines operations for a
+YANG data store based on the Constrained Application Protocol (CoAP {{RFC7252}}).
 CoAP uses a request/response interaction model that is based on HTTP (similar
 to RESTCONF {{RFC8040}}) and allows for multiple transports, including UDP or
 TCP (see {{-reliable}}). The Concise Binary Object Representation (CBOR
