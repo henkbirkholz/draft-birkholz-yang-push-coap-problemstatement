@@ -1,4 +1,4 @@
-﻿---
+---
 title: CoAP operations for YANG push via the Concise Management Interface
 docname: draft-birkholz-yang-push-coap-problemstatement-latest
 date: 2017-07-19
