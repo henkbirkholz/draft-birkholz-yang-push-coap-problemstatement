@@ -90,11 +90,11 @@ Table of Contents
 1.  Context of the Problem
 
    A binary transfer capability for YANG Subscribed Notifications
-   {{-yangnote} based on YANG push [I-D.ietf-netconf-yang-push] can be
-   realized by using existing RFC and I-D work as building blocks.  This
-   section is intended to provide a corresponding overview of the
-   existing ecosystem in order to identify gaps and therefore provide a
-   problem statement.
+   [I-D.ietf-netconf-subscribed-notifications] based on YANG push
+   [I-D.ietf-netconf-yang-push] can be realized by using existing RFC
+   and I-D work as building blocks.  This section is intended to provide
+   a corresponding overview of the existing ecosystem in order to
+   identify gaps and therefore provide a problem statement.
 
 1.1.  Binary YANG transfer protocol
 
