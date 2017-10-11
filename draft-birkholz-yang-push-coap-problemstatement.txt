@@ -90,7 +90,7 @@ Table of Contents
 1.  Context of the Problem
 
    A binary transfer capability for YANG Subscribed Notifications
-   [I-D.ietf-netconf-subscribed-notifications] based on YANG push
+   [I-D.ietf-netconf-subscribed-notifications] based on YANG Push
    [I-D.ietf-netconf-yang-push] can be realized by using existing RFC
    and I-D work as building blocks.  This section is intended to provide
    a corresponding overview of the existing ecosystem in order to
@@ -194,12 +194,12 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
    A popular variant of the configured subscription as defined in
    [I-D.ietf-netconf-yang-push] is the Call Home procedure defined in
-   [RFC8071].  In this approach, a Transport Layer Application
-   Association is initiated by the YANG data store with the YANG client.
-   After this "initial phase, in which the YANG server is as acting like
-   a client", the existing Transport Layer connection (or session, in
-   case of, for example, TLS) is then used to the YANG client to
-   initiate a subscription (i.e. the YANG client is initiating a dynamic
+   [RFC8071].  In this approach, a Transport Layer application
+   association with the YANG client is initiated by the YANG data store.
+   After this "initial phase, in which the YANG server is acting like a
+   client", the existing Transport Layer connection (or session, in case
+   of, for example, TLS) is then used to the YANG client to initiate a
+   subscription (i.e.  the YANG client is initiating a dynamic
    subscription based on a pre-configured request retained and issued by
    the YANG data store).
 
@@ -241,7 +241,7 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
    A YANG Push update subscription service both provides support for
    dynamic subscription (i.e. subscription state created by a client
    request, allowing for solicited push notifications in the context of
-   a up-time cycle of the server) and configured subscription (i.e.
+   an up-time cycle of the server) and configured subscription (i.e.
    subscription configuration retained on the server, allowing for
    unsolicited push notifications across up-time cycles of the server).
 
@@ -249,7 +249,7 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
    The two CoAP operations that enable a subscription mechanism are GET
    and FETCH (i.e. by supporting the Observe option).  Both operations
-   are viable candidates for creating a CoAP-based YANG push mechanism
+   are viable candidates for creating a CoAP-based YANG Push mechanism
    for CoMI.
 
 3.3.  Dynamic Subscriptions
