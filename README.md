@@ -1,4 +1,4 @@
-# CoAP operations for YANG push via the Concise Management Interface
+# YANG Push Operations for the CoAP Management Interface
 
 This is the working area for the individual Internet-Draft, "CoAP operations for YANG push via the Concise Management Interface".
 
