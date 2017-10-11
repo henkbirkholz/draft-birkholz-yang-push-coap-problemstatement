@@ -161,7 +161,7 @@ Internet-DrafCoAP operations for YANG push via the Concise  October 2017
    changes.  A subscription (i.e. the observe state retained on the
    server) can be discarded by the client by sending a correspond CoAP
    GET with Observe using an Observe parameter of 1 or simply by
-   "forget" the observation and return a CoAP Reset after receiving a
+   "forgeting" the observation and return a CoAP Reset after receiving a
 
 
 
@@ -197,9 +197,9 @@ Internet-DrafCoAP operations for YANG push via the Concise  October 2017
    [RFC8071].  In this approach, a Transport Layer Application
    Association is initiated by the YANG data store with the YANG client.
    After this "initial phase, in which the YANG server is as acting like
-   client", the existing Transport Layer connection (or session, in case
-   of, for example, TLS) is then used to by the YANG client to initiate
-   a subscription (i.e. the YANG client is initiating a dynamic
+   a client", the existing Transport Layer connection (or session, in
+   case of, for example, TLS) is then used to the YANG client to
+   initiate a subscription (i.e. the YANG client is initiating a dynamic
    subscription based on a pre-configured request retained and issued by
    the YANG data store).
 
