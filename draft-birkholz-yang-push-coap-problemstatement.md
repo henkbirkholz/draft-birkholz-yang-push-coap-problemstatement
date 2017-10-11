@@ -40,6 +40,7 @@ normative:
   I-D.ietf-core-coap-tcp-tls: reliable
   I-D.ietf-netconf-subscribed-notifications: yangnote
   I-D.ietf-netconf-yang-push: yangpush
+  I-D.ietf-core-sid: sid
  
 informative:
 
@@ -63,6 +64,21 @@ model that is based on HTTP (similar to RESTCONF {{RFC8040}}) and allows for mul
 including UDP or TCP (see {{-reliable}}. The Concise Binary Object Representation (CBOR {{RFC7049}}
 is used for the serialization of data in motion in respect to CoAP operations and the data modeled
 with YANG {{-yangcbor}}.
+
+{{-comi}} states that CoAP "is designed for Machine to Machine (M2M) applications such as smart
+energy, smart city and building control. Constrained devices need to be managed in an automatic
+fashion to handle the large quantities of devices that are expected in future installations.
+Messages between devices need to be as small and infrequent as possible. The implementation
+complexity and runtime resources need to be as small as possible."
+
+In addition, {{-comi}} highlights that "CoMI and RESTCONF are intended to work in a stateless
+client-server fashion.  They use a single round-trip to complete a single editing transaction, where
+NETCONF needs up to 10 round trips. To promote small messges, CoMI uses a YANG to CBOR mapping
+{{-yangcbor}} and numeric identifiers {{-sid}} to minimize CBOR payloads and URI length."
+
+In essence, via CoMI, a small sensor can emit a set of measurement in binary encoding with a very
+lightweight overhead, which makes this data in motion message a fully semantically compliant YANG
+notification (instead of a set of raw values that require more context to be interpreted correctly).
 
 ## Subscriptions via CoAP
 
