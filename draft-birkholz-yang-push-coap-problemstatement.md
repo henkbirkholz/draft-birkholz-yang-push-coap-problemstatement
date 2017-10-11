@@ -67,7 +67,7 @@ motion.
 
 # Context of the Problem
 
-A binary transfer capability for YANG Subscribed Notifications {{-yangnote}
+A binary transfer capability for YANG Subscribed Notifications {{-yangnote}}
 based on YANG push {{-yangpush}} can be realized by using existing RFC and I-D
 work as building blocks. This section is intended to provide a corresponding
 overview of the existing ecosystem in order to identify gaps and therefore
