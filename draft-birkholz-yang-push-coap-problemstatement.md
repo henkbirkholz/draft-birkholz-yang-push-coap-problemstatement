@@ -121,7 +121,7 @@ requests. Instead, subsequent responses including both the Observe option and
 using the token of the request that initiated the observation are returned when
 the observed resource changes. A subscription (i.e. the observe state retained
 on the server) can be discarded by the client by sending a correspond CoAP GET
-with Observe using an Observe parameter of 1 or simply by "forget" the
+with Observe using an Observe parameter of 1 or simply by "forgeting" the
 observation and return a CoAP Reset after receiving a notification in the
 context of the subscription. A subscription can also be discarded by the server
 by sending a corresponding response that does not contain an Observe option.
@@ -144,9 +144,9 @@ pushed notifications in respect to a YANG client.
 A popular variant of the configured subscription as defined in {{-yangpush}} is
 the Call Home procedure defined in {{RFC8071}}. In this approach, a Transport
 Layer Application Association is initiated by the YANG data store with the YANG
-client. After this "initial phase, in which the YANG server is as acting like
+client. After this "initial phase, in which the YANG server is as acting like a
 client", the existing Transport Layer connection (or session, in case of, for
-example, TLS) is then used to by the YANG client to initiate a subscription
+example, TLS) is then used to the YANG client to initiate a subscription
 (i.e. the YANG client is initiating a dynamic subscription based on a
 pre-configured request retained and issued by the YANG data store).
 
