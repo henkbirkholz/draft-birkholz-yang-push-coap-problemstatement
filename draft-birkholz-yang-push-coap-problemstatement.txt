@@ -4,8 +4,9 @@
 
 SACM Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
-Intended status: Standards Track                        October 10, 2017
-Expires: April 13, 2018
+Intended status: Standards Track                                 T. Thou
+Expires: April 13, 2018                                           Huawei
+                                                        October 10, 2017
 
 
    CoAP operations for YANG push via the Concise Management Interface
@@ -49,15 +50,15 @@ Copyright Notice
    publication of this document.  Please review these documents
    carefully, as they describe your rights and restrictions with respect
    to this document.  Code Components extracted from this document must
-   include Simplified BSD License text as described in Section 4.e of
 
 
 
-Birkholz                 Expires April 13, 2018                 [Page 1]
+Birkholz & Thou          Expires April 13, 2018                 [Page 1]
 
 Internet-DrafCoAP operations for YANG push via the Concise  October 2017
 
 
+   include Simplified BSD License text as described in Section 4.e of
    the Trust Legal Provisions and are provided without warranty as
    described in the Simplified BSD License.
 
@@ -84,7 +85,7 @@ Table of Contents
    6.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   7
    7.  Change Log  . . . . . . . . . . . . . . . . . . . . . . . . .   7
    8.  Normative References  . . . . . . . . . . . . . . . . . . . .   7
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   8
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   8
 
 1.  Context of the Problem
 
@@ -102,17 +103,19 @@ Table of Contents
    Application Protocol (CoAP [RFC7252]).  CoAP uses a request/response
    interaction model that is based on HTTP (similar to RESTCONF
    [RFC8040]) and allows for multiple transports, including UDP or TCP
-   (see [I-D.ietf-core-coap-tcp-tls].  The Concise Binary Object
-   Representation (CBOR [RFC7049] is used for the serialization of data
-   in motion in respect to CoAP operations and the data modeled with
-   YANG [I-D.ietf-core-yang-cbor].
+   (see [I-D.ietf-core-coap-tcp-tls]).  The Concise Binary Object
+   Representation (CBOR [RFC7049]) is used for the serialization of data
 
 
 
-Birkholz                 Expires April 13, 2018                 [Page 2]
+
+Birkholz & Thou          Expires April 13, 2018                 [Page 2]
 
 Internet-DrafCoAP operations for YANG push via the Concise  October 2017
 
+
+   in motion in respect to CoAP operations and the data modeled with
+   YANG [I-D.ietf-core-yang-cbor].
 
 1.2.  Device-Type Scope
 
@@ -159,16 +162,17 @@ Internet-DrafCoAP operations for YANG push via the Concise  October 2017
    server) can be discarded by the client by sending a correspond CoAP
    GET with Observe using an Observe parameter of 1 or simply by
    "forget" the observation and return a CoAP Reset after receiving a
-   notification in the context of the subscription.  A subscription can
-   also be discarded by the server by sending a corresponding response
-   that does not contain an Observe option.
 
 
 
-Birkholz                 Expires April 13, 2018                 [Page 3]
+Birkholz & Thou          Expires April 13, 2018                 [Page 3]
 
 Internet-DrafCoAP operations for YANG push via the Concise  October 2017
 
+
+   notification in the context of the subscription.  A subscription can
+   also be discarded by the server by sending a corresponding response
+   that does not contain an Observe option.
 
    The subscription used in CoAP pub/sub are used to subscribe to a
    topic provided by a CoAP broker REST API.  YANG Push
@@ -213,18 +217,17 @@ Internet-DrafCoAP operations for YANG push via the Concise  October 2017
 
    In addition to the identified gaps, the semantics of metadata - if
    there are any - that have to be conveyed to or from a YANG data store
-   in order to subscribe to a (filtered) YANG module or data node are
-   not identified.
 
 
 
 
-
-
-Birkholz                 Expires April 13, 2018                 [Page 4]
+Birkholz & Thou          Expires April 13, 2018                 [Page 4]
 
 Internet-DrafCoAP operations for YANG push via the Concise  October 2017
 
+
+   in order to subscribe to a (filtered) YANG module or data node are
+   not identified.
 
 3.  Potential Approaches and Solutions
 
@@ -267,17 +270,14 @@ Internet-DrafCoAP operations for YANG push via the Concise  October 2017
    (encoded in CBOR).
 
    This variant allows for multiple clients to observe a specific
-   filtered data node without conducting a POST operation if the
+   filtered data node without conducting a POST operation, if the
    corresponding URI is made known to other clients that did not conduct
    the POST operation or, for example, is canonically linked to/
    derivable from a filter expression.
 
 
 
-
-
-
-Birkholz                 Expires April 13, 2018                 [Page 5]
+Birkholz & Thou          Expires April 13, 2018                 [Page 5]
 
 Internet-DrafCoAP operations for YANG push via the Concise  October 2017
 
@@ -298,9 +298,9 @@ Internet-DrafCoAP operations for YANG push via the Concise  October 2017
 
    Using CoAP, the server retains configuration that creates
    subscription state when the YANG data store is started.  The client
-   has to have or gain knowledge of the CoAP token that are included
-   inthe responses created in the context of the subscription state
-   create from server configuration.
+   has to have or gain knowledge of the CoAP tokens that are included in
+   the responses created in the context of the subscription state create
+   from server configuration.
 
 3.4.1.  Retaining the Content of a GET Operation as Configuration
 
@@ -333,7 +333,7 @@ Internet-DrafCoAP operations for YANG push via the Concise  October 2017
 
 
 
-Birkholz                 Expires April 13, 2018                 [Page 6]
+Birkholz & Thou          Expires April 13, 2018                 [Page 6]
 
 Internet-DrafCoAP operations for YANG push via the Concise  October 2017
 
@@ -389,7 +389,7 @@ Internet-DrafCoAP operations for YANG push via the Concise  October 2017
 
 
 
-Birkholz                 Expires April 13, 2018                 [Page 7]
+Birkholz & Thou          Expires April 13, 2018                 [Page 7]
 
 Internet-DrafCoAP operations for YANG push via the Concise  October 2017
 
@@ -433,7 +433,7 @@ Internet-DrafCoAP operations for YANG push via the Concise  October 2017
               (CoAP)", RFC 8132, DOI 10.17487/RFC8132, April 2017,
               <https://www.rfc-editor.org/info/rfc8132>.
 
-Author's Address
+Authors' Addresses
 
    Henk Birkholz
    Fraunhofer SIT
@@ -445,4 +445,60 @@ Author's Address
 
 
 
-Birkholz                 Expires April 13, 2018                 [Page 8]
+Birkholz & Thou          Expires April 13, 2018                 [Page 8]
+
+Internet-DrafCoAP operations for YANG push via the Concise  October 2017
+
+
+   Tianran Zhou
+   Huawei
+   156 Beiqing Rd.
+   Beijing, Haidian District
+   China
+
+   Email: zhoutianran@huawei.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Birkholz & Thou          Expires April 13, 2018                 [Page 9]

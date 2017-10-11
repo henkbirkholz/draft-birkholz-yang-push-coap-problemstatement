@@ -301,7 +301,7 @@ address {
   <meta name="generator" content="xml2rfc version 2.8.2 - https://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
-  <meta name="dct.creator" content="Birkholz, H." />
+  <meta name="dct.creator" content="Birkholz, H. and T. Thou" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-birkholz-yang-push-coap-problemstatement-latest" />
   <meta name="dct.issued" scheme="ISO8601" content="2017-10-10" />
   <meta name="dct.abstract" content="This document provides a problem statement, derives an initial gap analysis and illustrates a first set of solution approaches in regard to augmenting YANG data stores based on the Concise Management Interface with YANG Push capabilities. A binary transfer mechanism for YANG Subscribed Notifications addresses both the requirements of constrained-node networks and the need for semantic interoperability via self-descriptiveness of the corresponding data in motion." />
@@ -324,11 +324,15 @@ address {
 </tr>
 <tr>
 <td class="left">Intended status: Standards Track</td>
-<td class="right">October 10, 2017</td>
+<td class="right">T. Thou</td>
 </tr>
 <tr>
 <td class="left">Expires: April 13, 2018</td>
-<td class="right"></td>
+<td class="right">Huawei</td>
+</tr>
+<tr>
+<td class="left"></td>
+<td class="right">October 10, 2017</td>
 </tr>
 
     	
@@ -394,7 +398,7 @@ address {
 </li>
 <li>8.   <a href="#rfc.references">Normative References</a>
 </li>
-<li><a href="#rfc.authors">Author's Address</a>
+<li><a href="#rfc.authors">Authors' Addresses</a>
 </li>
 
 
@@ -407,7 +411,7 @@ address {
 <h1 id="rfc.section.1.1">
 <a href="#rfc.section.1.1">1.1.</a> <a href="#binary-yang-transfer-protocol" id="binary-yang-transfer-protocol">Binary YANG transfer protocol</a>
 </h1>
-<p id="rfc.section.1.1.p.1">The Concise Management Interface I-D (CoMI <a href="#I-D.ietf-core-comi" class="xref">[I-D.ietf-core-comi]</a>) defines operations for a YANG data store based on the Concise Application Protocol (CoAP <a href="#RFC7252" class="xref">[RFC7252]</a>).  CoAP uses a request/response interaction model that is based on HTTP (similar to RESTCONF <a href="#RFC8040" class="xref">[RFC8040]</a>) and allows for multiple transports, including UDP or TCP (see <a href="#I-D.ietf-core-coap-tcp-tls" class="xref">[I-D.ietf-core-coap-tcp-tls]</a>. The Concise Binary Object Representation (CBOR <a href="#RFC7049" class="xref">[RFC7049]</a> is used for the serialization of data in motion in respect to CoAP operations and the data modeled with YANG <a href="#I-D.ietf-core-yang-cbor" class="xref">[I-D.ietf-core-yang-cbor]</a>.</p>
+<p id="rfc.section.1.1.p.1">The Concise Management Interface I-D (CoMI <a href="#I-D.ietf-core-comi" class="xref">[I-D.ietf-core-comi]</a>) defines operations for a YANG data store based on the Concise Application Protocol (CoAP <a href="#RFC7252" class="xref">[RFC7252]</a>).  CoAP uses a request/response interaction model that is based on HTTP (similar to RESTCONF <a href="#RFC8040" class="xref">[RFC8040]</a>) and allows for multiple transports, including UDP or TCP (see <a href="#I-D.ietf-core-coap-tcp-tls" class="xref">[I-D.ietf-core-coap-tcp-tls]</a>). The Concise Binary Object Representation (CBOR <a href="#RFC7049" class="xref">[RFC7049]</a>) is used for the serialization of data in motion in respect to CoAP operations and the data modeled with YANG <a href="#I-D.ietf-core-yang-cbor" class="xref">[I-D.ietf-core-yang-cbor]</a>.</p>
 <h1 id="rfc.section.1.2">
 <a href="#rfc.section.1.2">1.2.</a> <a href="#device-type-scope" id="device-type-scope">Device-Type Scope</a>
 </h1>
@@ -456,7 +460,7 @@ address {
 <a href="#rfc.section.3.3.1">3.3.1.</a> <a href="#yang-push-via-get" id="yang-push-via-get">YANG Push via GET</a>
 </h1>
 <p id="rfc.section.3.3.1.p.1">This usage scenario requires two consecutive operations. It is not possible to transfer a filter expression included in a GET operation. In consequence, a POST operation on a collection resource has to be conducted in order to convey a filter expression to the YANG data store, allowing it to return an URI that contains the data node information filtered in respect to the posted filter expression (encoded in CBOR).</p>
-<p id="rfc.section.3.3.1.p.2">This variant allows for multiple clients to observe a specific filtered data node without conducting a POST operation if the corresponding URI is made known to other clients that did not conduct the POST operation or, for example, is canonically linked to/derivable from a filter expression.</p>
+<p id="rfc.section.3.3.1.p.2">This variant allows for multiple clients to observe a specific filtered data node without conducting a POST operation, if the corresponding URI is made known to other clients that did not conduct the POST operation or, for example, is canonically linked to/derivable from a filter expression.</p>
 <h1 id="rfc.section.3.3.2">
 <a href="#rfc.section.3.3.2">3.3.2.</a> <a href="#yang-push-via-fetch" id="yang-push-via-fetch">YANG Push via FETCH</a>
 </h1>
@@ -465,7 +469,7 @@ address {
 <h1 id="rfc.section.3.4">
 <a href="#rfc.section.3.4">3.4.</a> <a href="#configured-subscriptions" id="configured-subscriptions">Configured Subscriptions</a>
 </h1>
-<p id="rfc.section.3.4.p.1">Using CoAP, the server retains configuration that creates subscription state when the YANG data store is started. The client has to have or gain knowledge of the CoAP token that are included inthe responses created in the context of the subscription state create from server configuration.</p>
+<p id="rfc.section.3.4.p.1">Using CoAP, the server retains configuration that creates subscription state when the YANG data store is started. The client has to have or gain knowledge of the CoAP tokens that are included in the responses created in the context of the subscription state create from server configuration.</p>
 <h1 id="rfc.section.3.4.1">
 <a href="#rfc.section.3.4.1">3.4.1.</a> <a href="#retaining-the-content-of-a-get-operation-as-configuration" id="retaining-the-content-of-a-get-operation-as-configuration">Retaining the Content of a GET Operation as Configuration</a>
 </h1>
@@ -560,7 +564,7 @@ address {
 <a>van der Stok, P.</a>, <a>Bormann, C.</a> and <a>A. Sehgal</a>, "<a href="https://tools.ietf.org/html/rfc8132">PATCH and FETCH Methods for the Constrained Application Protocol (CoAP)</a>", RFC 8132, DOI 10.17487/RFC8132, April 2017.</td>
 </tr>
 </tbody></table>
-<h1 id="rfc.authors"><a href="#rfc.authors">Author's Address</a></h1>
+<h1 id="rfc.authors"><a href="#rfc.authors">Authors' Addresses</a></h1>
 <div class="avoidbreak">
   <address class="vcard">
 	<span class="vcardline">
@@ -581,6 +585,28 @@ address {
 	  <span class="country-name vcardline">Germany</span>
 	</span>
 	<span class="vcardline">EMail: <a href="mailto:henk.birkholz@sit.fraunhofer.de">henk.birkholz@sit.fraunhofer.de</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Tianran Zhou</span> 
+	  <span class="n hidden">
+		<span class="family-name">Thou</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Huawei</span>
+	<span class="adr">
+	  <span class="vcardline">156 Beiqing Rd.</span>
+
+	  <span class="vcardline">
+		<span class="locality">Beijing</span>,  
+		<span class="region">Haidian District</span> 
+		<span class="code"></span>
+	  </span>
+	  <span class="country-name vcardline">China</span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:zhoutianran@huawei.com">zhoutianran@huawei.com</a></span>
 
   </address>
 </div>
