@@ -26,6 +26,15 @@ author:
   code: '64295'
   city: Darmstadt
   country: Germany
+- ins: T. Thou
+  name: Tianran Zhou
+  org: Huawei
+  abbrev: Huawei
+  email: zhoutianran@huawei.com
+  street: 156 Beiqing Rd.
+  region: Haidian District
+  city: Beijing
+  country: China
 
 normative:
   RFC7252:
@@ -70,8 +79,8 @@ The Concise Management Interface I-D (CoMI {{-comi}}) defines operations for a
 YANG data store based on the Concise Application Protocol (CoAP {{RFC7252}}).
 CoAP uses a request/response interaction model that is based on HTTP (similar
 to RESTCONF {{RFC8040}}) and allows for multiple transports, including UDP or
-TCP (see {{-reliable}}. The Concise Binary Object Representation (CBOR
-{{RFC7049}} is used for the serialization of data in motion in respect to CoAP
+TCP (see {{-reliable}}). The Concise Binary Object Representation (CBOR
+{{RFC7049}}) is used for the serialization of data in motion in respect to CoAP
 operations and the data modeled with YANG {{-yangcbor}}.
 
 ## Device-Type Scope
@@ -193,9 +202,9 @@ contains the data node information filtered in respect to the posted filter
 expression (encoded in CBOR).
 
 This variant allows for multiple clients to observe a specific filtered data
-node without conducting a POST operation if the corresponding URI is made known
-to other clients that did not conduct the
-POST operation or, for example, is canonically linked to/derivable from a filter expression.
+node without conducting a POST operation, if the corresponding URI is made
+known to other clients that did not conduct the POST operation or, for example,
+is canonically linked to/derivable from a filter expression.
 
 ### YANG Push via FETCH
 
@@ -212,7 +221,7 @@ time on a constrained device. I.e. the resource cannot be prepared "beforehand".
 
 Using CoAP, the server retains configuration that creates subscription state
 when the YANG data store is started. The client has to have or gain knowledge of
-the CoAP token that are included inthe responses created in the context of the
+the CoAP tokens that are included in the responses created in the context of the
 subscription state create from server configuration.
 
 ### Retaining the Content of a GET Operation as Configuration
