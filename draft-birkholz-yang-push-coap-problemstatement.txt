@@ -8,6 +8,8 @@ Intended status: Standards Track                                 T. Thou
 Expires: April 13, 2018                                           Huawei
                                                                   X. Liu
                                                                    Jabil
+                                                                 E. Voit
+                                                            Cisco System
                                                         October 10, 2017
 
 
@@ -48,8 +50,6 @@ Copyright Notice
 
    This document is subject to BCP 78 and the IETF Trust's Legal
    Provisions Relating to IETF Documents
-   (https://trustee.ietf.org/license-info) in effect on the date of
-   publication of this document.  Please review these documents
 
 
 
@@ -58,6 +58,8 @@ Birkholz, et al.         Expires April 13, 2018                 [Page 1]
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
+   (https://trustee.ietf.org/license-info) in effect on the date of
+   publication of this document.  Please review these documents
    carefully, as they describe your rights and restrictions with respect
    to this document.  Code Components extracted from this document must
    include Simplified BSD License text as described in Section 4.e of
@@ -67,7 +69,7 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 Table of Contents
 
    1.  Context of the Problem  . . . . . . . . . . . . . . . . . . .   2
-     1.1.  Binary YANG transfer protocol . . . . . . . . . . . . . .   2
+     1.1.  Binary YANG transfer protocol . . . . . . . . . . . . . .   3
      1.2.  Device-Type Scope . . . . . . . . . . . . . . . . . . . .   3
      1.3.  Subscriptions via CoAP  . . . . . . . . . . . . . . . . .   3
      1.4.  Configured Subscriptions and Call-Home  . . . . . . . . .   4
@@ -76,7 +78,7 @@ Table of Contents
    3.  Potential Approaches and Solutions  . . . . . . . . . . . . .   6
      3.1.  YANG subscription variants  . . . . . . . . . . . . . . .   6
      3.2.  YANG Push via CoAP  . . . . . . . . . . . . . . . . . . .   6
-     3.3.  Dynamic Subscriptions . . . . . . . . . . . . . . . . . .   6
+     3.3.  Dynamic Subscriptions . . . . . . . . . . . . . . . . . .   7
        3.3.1.  YANG Push via GET . . . . . . . . . . . . . . . . . .   7
        3.3.2.  YANG Push via FETCH . . . . . . . . . . . . . . . . .   7
      3.4.  Configured Subscriptions  . . . . . . . . . . . . . . . .   7
@@ -100,12 +102,10 @@ Table of Contents
    a corresponding overview of the existing ecosystem in order to
    identify gaps and therefore provide a problem statement.
 
-1.1.  Binary YANG transfer protocol
 
-   The CoAP Management Interface I-D (CoMI [I-D.ietf-core-comi]) defines
-   operations for a YANG data store based on the Constrained Application
-   Protocol (CoAP [RFC7252]).  CoAP uses a request/response interaction
-   model that is based on HTTP (similar to RESTCONF [RFC8040]) and
+
+
+
 
 
 
@@ -114,6 +114,12 @@ Birkholz, et al.         Expires April 13, 2018                 [Page 2]
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
+1.1.  Binary YANG transfer protocol
+
+   The CoAP Management Interface I-D (CoMI [I-D.ietf-core-comi]) defines
+   operations for a YANG data store based on the Constrained Application
+   Protocol (CoAP [RFC7252]).  CoAP uses a request/response interaction
+   model that is based on HTTP (similar to RESTCONF [RFC8040]) and
    allows for multiple transports, including UDP or TCP (see
    [I-D.ietf-core-coap-tcp-tls]).  The Concise Binary Object
    Representation (CBOR [RFC7049]) is used for the serialization of data
@@ -156,12 +162,6 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
    CoAP operation that supports the Observe option is the FETCH
    operation defined in [RFC8132].
 
-   The Observe option creates a small corresponding state on the server
-   side that eliminates the need for continuous polling of a resource
-   via subsequent requests.  Instead, subsequent responses including
-   both the Observe option and using the token of the request that
-   initiated the observation are returned when the observed resource
-   changes.  A subscription (i.e. the observe state retained on the
 
 
 
@@ -170,6 +170,12 @@ Birkholz, et al.         Expires April 13, 2018                 [Page 3]
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
+   The Observe option creates a small corresponding state on the server
+   side that eliminates the need for continuous polling of a resource
+   via subsequent requests.  Instead, subsequent responses including
+   both the Observe option and using the token of the request that
+   initiated the observation are returned when the observed resource
+   changes.  A subscription (i.e. the observe state retained on the
    server) can be discarded by the client by sending a correspond CoAP
    GET with Observe using an Observe parameter of 1 or simply by
    "forgeting" the observation and return a CoAP Reset after receiving a
@@ -213,18 +219,18 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
    action.  Similarly, the secure establishment of a key infrastructure
    without external help is also an impossibility."
 
-   According to [I-D.ietf-anima-bootstrapping-keyinfra] the
-   bootstrapping approach Call-Home has problems and limitations, which
-   (amongst others) the draft itself is trying to address:
-
-   o  the pledge requires realtime connectivity to the vendor service
-
 
 
 Birkholz, et al.         Expires April 13, 2018                 [Page 4]
 
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
+
+   According to [I-D.ietf-anima-bootstrapping-keyinfra] the
+   bootstrapping approach Call-Home has problems and limitations, which
+   (amongst others) the draft itself is trying to address:
+
+   o  the pledge requires realtime connectivity to the vendor service
 
    o  the domain identity is exposed to the vendor service (this is a
       privacy concern)
@@ -268,12 +274,6 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
    o  no CoAP Subscribe procedure for dynamic YANG subscriptions is
       standardized that is able to convey a filter expression and
-      potentially other metadata required in the context of a YANG
-      Subscribed Notifications application association.
-
-   o  no CoAP Call Home feature is standardized to support a popular
-      variant of configured YANG subscriptions.
-
 
 
 
@@ -281,6 +281,12 @@ Birkholz, et al.         Expires April 13, 2018                 [Page 5]
 
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
+
+      potentially other metadata required in the context of a YANG
+      Subscribed Notifications application association.
+
+   o  no CoAP Call Home feature is standardized to support a popular
+      variant of configured YANG subscriptions.
 
    o  no general Call Home mechanism is standardized that enables the
       discovery of "a home to Call Home" or that would be able to deal
@@ -322,12 +328,6 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
    are viable candidates for creating a CoAP-based YANG Push mechanism
    for CoMI.
 
-3.3.  Dynamic Subscriptions
-
-   Using CoAP, the client issuing the initial subscription request
-   creates the subscription state.  Examples are the GET or FETCH
-   operation including an Observe option using an Observe parameter of 0
-   (zero).
 
 
 
@@ -337,6 +337,13 @@ Birkholz, et al.         Expires April 13, 2018                 [Page 6]
 
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
+
+3.3.  Dynamic Subscriptions
+
+   Using CoAP, the client issuing the initial subscription request
+   creates the subscription state.  Examples are the GET or FETCH
+   operation including an Observe option using an Observe parameter of 0
+   (zero).
 
 3.3.1.  YANG Push via GET
 
@@ -379,13 +386,6 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
    This usage scenario "mimics" the receiving of a subscription request
    by storing the corresponding information that are relevant for
    creating a subscription state as configuration on the YANG data
-   store.  I.e. the configuration would be including the YANG client IP
-   address and the CoAP token to be used in the responses that convey
-   the subscribed notifications.
-
-   This variant requires that the client also knows or gains knowledge
-   of the corresponding CoAP token in order to not discard the incoming
-   responses.
 
 
 
@@ -393,6 +393,14 @@ Birkholz, et al.         Expires April 13, 2018                 [Page 7]
 
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
+
+   store.  I.e. the configuration would be including the YANG client IP
+   address and the CoAP token to be used in the responses that convey
+   the subscribed notifications.
+
+   This variant requires that the client also knows or gains knowledge
+   of the corresponding CoAP token in order to not discard the incoming
+   responses.
 
 3.4.2.  Call Home via CoAP
 
@@ -430,6 +438,18 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 8.  Normative References
 
+
+
+
+
+
+
+
+Birkholz, et al.         Expires April 13, 2018                 [Page 8]
+
+Internet-DrafYANG Push Operations for the CoAP Management I October 2017
+
+
    [I-D.ietf-anima-bootstrapping-keyinfra]
               Pritikin, M., Richardson, M., Behringer, M., Bjarnason,
               S., and K. Watsen, "Bootstrapping Remote Secure Key
@@ -441,14 +461,6 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
               Subscribe Broker for the Constrained Application Protocol
               (CoAP)", draft-ietf-core-coap-pubsub-02 (work in
               progress), July 2017.
-
-
-
-
-Birkholz, et al.         Expires April 13, 2018                 [Page 8]
-
-Internet-DrafYANG Push Operations for the CoAP Management I October 2017
-
 
    [I-D.ietf-core-coap-tcp-tls]
               Bormann, C., Lemay, S., Tschofenig, H., Hartke, K.,
@@ -485,6 +497,15 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
               YANG datastore push updates", draft-ietf-netconf-yang-
               push-10 (work in progress), October 2017.
 
+
+
+
+
+Birkholz, et al.         Expires April 13, 2018                 [Page 9]
+
+Internet-DrafYANG Push Operations for the CoAP Management I October 2017
+
+
    [I-D.ietf-netconf-zerotouch]
               Watsen, K., Abrahamsson, M., and I. Farrer, "Zero Touch
               Provisioning for NETCONF or RESTCONF based Management",
@@ -495,16 +516,6 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
               Kumar, S., Stok, P., Kampanakis, P., Furuhed, M., and S.
               Raza, "EST over secure CoAP (EST-coaps)", draft-
               vanderstok-ace-coap-est-02 (work in progress), June 2017.
-
-
-
-
-
-
-Birkholz, et al.         Expires April 13, 2018                 [Page 9]
-
-Internet-DrafYANG Push Operations for the CoAP Management I October 2017
-
 
    [RFC7049]  Bormann, C. and P. Hoffman, "Concise Binary Object
               Representation (CBOR)", RFC 7049, DOI 10.17487/RFC7049,
@@ -544,6 +555,13 @@ Authors' Addresses
    Email: henk.birkholz@sit.fraunhofer.de
 
 
+
+
+Birkholz, et al.         Expires April 13, 2018                [Page 10]
+
+Internet-DrafYANG Push Operations for the CoAP Management I October 2017
+
+
    Tianran Zhou
    Huawei
    156 Beiqing Rd.
@@ -551,15 +569,6 @@ Authors' Addresses
    China
 
    Email: zhoutianran@huawei.com
-
-
-
-
-
-
-Birkholz, et al.         Expires April 13, 2018                [Page 10]
-
-Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
    Xufeng Liu
@@ -571,19 +580,10 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
    Email: Xufeng_Liu@jabil.com
 
 
+   Eric Voit
+   Cisco System
 
-
-
-
-
-
-
-
-
-
-
-
-
+   Email: evoit@cisco.com
 
 
 
