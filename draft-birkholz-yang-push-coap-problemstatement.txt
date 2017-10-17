@@ -6,6 +6,8 @@ SACM Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Standards Track                                 T. Thou
 Expires: April 13, 2018                                           Huawei
+                                                                  X. Liu
+                                                                   Jabil
                                                         October 10, 2017
 
 
@@ -48,16 +50,16 @@ Copyright Notice
    Provisions Relating to IETF Documents
    (https://trustee.ietf.org/license-info) in effect on the date of
    publication of this document.  Please review these documents
-   carefully, as they describe your rights and restrictions with respect
-   to this document.  Code Components extracted from this document must
 
 
 
-Birkholz & Thou          Expires April 13, 2018                 [Page 1]
+Birkholz, et al.         Expires April 13, 2018                 [Page 1]
 
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
    include Simplified BSD License text as described in Section 4.e of
    the Trust Legal Provisions and are provided without warranty as
    described in the Simplified BSD License.
@@ -104,16 +106,16 @@ Table of Contents
    operations for a YANG data store based on the Constrained Application
    Protocol (CoAP [RFC7252]).  CoAP uses a request/response interaction
    model that is based on HTTP (similar to RESTCONF [RFC8040]) and
-   allows for multiple transports, including UDP or TCP (see
-   [I-D.ietf-core-coap-tcp-tls]).  The Concise Binary Object
 
 
 
-Birkholz & Thou          Expires April 13, 2018                 [Page 2]
+Birkholz, et al.         Expires April 13, 2018                 [Page 2]
 
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
+   allows for multiple transports, including UDP or TCP (see
+   [I-D.ietf-core-coap-tcp-tls]).  The Concise Binary Object
    Representation (CBOR [RFC7049]) is used for the serialization of data
    in motion in respect to CoAP operations and the data modeled with
    YANG [I-D.ietf-core-yang-cbor].
@@ -160,16 +162,16 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
    both the Observe option and using the token of the request that
    initiated the observation are returned when the observed resource
    changes.  A subscription (i.e. the observe state retained on the
-   server) can be discarded by the client by sending a correspond CoAP
-   GET with Observe using an Observe parameter of 1 or simply by
 
 
 
-Birkholz & Thou          Expires April 13, 2018                 [Page 3]
+Birkholz, et al.         Expires April 13, 2018                 [Page 3]
 
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
+   server) can be discarded by the client by sending a correspond CoAP
+   GET with Observe using an Observe parameter of 1 or simply by
    "forgeting" the observation and return a CoAP Reset after receiving a
    notification in the context of the subscription.  A subscription can
    also be discarded by the server by sending a corresponding response
@@ -219,9 +221,7 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
 
-
-
-Birkholz & Thou          Expires April 13, 2018                 [Page 4]
+Birkholz, et al.         Expires April 13, 2018                 [Page 4]
 
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
@@ -277,7 +277,7 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
 
-Birkholz & Thou          Expires April 13, 2018                 [Page 5]
+Birkholz, et al.         Expires April 13, 2018                 [Page 5]
 
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
@@ -333,7 +333,7 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
 
-Birkholz & Thou          Expires April 13, 2018                 [Page 6]
+Birkholz, et al.         Expires April 13, 2018                 [Page 6]
 
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
@@ -389,7 +389,7 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
 
-Birkholz & Thou          Expires April 13, 2018                 [Page 7]
+Birkholz, et al.         Expires April 13, 2018                 [Page 7]
 
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
@@ -445,7 +445,7 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
 
-Birkholz & Thou          Expires April 13, 2018                 [Page 8]
+Birkholz, et al.         Expires April 13, 2018                 [Page 8]
 
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
@@ -501,7 +501,7 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
 
-Birkholz & Thou          Expires April 13, 2018                 [Page 9]
+Birkholz, et al.         Expires April 13, 2018                 [Page 9]
 
 Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
@@ -557,4 +557,60 @@ Authors' Addresses
 
 
 
-Birkholz & Thou          Expires April 13, 2018                [Page 10]
+Birkholz, et al.         Expires April 13, 2018                [Page 10]
+
+Internet-DrafYANG Push Operations for the CoAP Management I October 2017
+
+
+   Xufeng Liu
+   Jabil
+   8281 Greensboro Drive, Suite 200
+   McLean VA  22102
+   USA
+
+   Email: Xufeng_Liu@jabil.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Birkholz, et al.         Expires April 13, 2018                [Page 11]
