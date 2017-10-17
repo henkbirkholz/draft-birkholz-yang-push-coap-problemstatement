@@ -50,6 +50,9 @@ normative:
   I-D.ietf-netconf-subscribed-notifications: yangnote
   I-D.ietf-netconf-yang-push: yangpush
   I-D.ietf-core-sid: sid
+  I-D.vanderstok-ace-coap-est: EST-coaps
+  I-D.ietf-anima-bootstrapping-keyinfra: BRSKI
+  I-D.ietf-netconf-zerotouch: yangzerotouch
 
 informative:
 
@@ -150,6 +153,49 @@ example, TLS) is then used to the YANG client to initiate a subscription (i.e.
 the YANG client is initiating a dynamic subscription based on a pre-configured
 request retained and issued by the YANG data store).
 
+## Bootstrapping of Drop-Shiped Pledges
+
+{{-BRSKI}} highlights that effectively "to literally 'pull yourself up by the
+bootstraps' is an impossible action. Similarly, the secure establishment of a
+key infrastructure without external help is also an impossibility."
+
+According to {{-BRSKI}} the bootstrapping approach Call-Home has problems and
+limitations, which (amongst others) the draft itself is trying to address:
+
+* the pledge requires realtime connectivity to the vendor service
+* the domain identity is exposed to the vendor service (this is a
+  privacy concern)
+* the vendor is responsible for making the authorization decisions
+  (this is a liability concern)
+
+A Pledge in the context of {{-BRSKI}} is "the prospective device, which has
+an identity installed by a third-party (e.g., vendor, manufacturer or
+integrator)."
+
+A Pledge can be "drop-shiped", which refers to "the physical distribution of
+equipment containing the 'factory default' configuration to a final destination.
+In zero-touch scenarios there is no staging or pre-configuration during
+drop-ship."
+
+In the scope of Call-Home as a part of YANG Push, either the factory default
+configuration of a drop-shipped Pledge that is a YANG data store would require
+to include the "home to Call Home" configuration or it has to be configured
+locally.
+
+{{-yangzerotouch}} is intended to provide more flexibility to the Call-Home
+procedure already - by allowing to stage connection attempts to a locally
+administered network and if that fails fall back to connecting to a remotely
+administered network. Alas, {{-yangzerotouch}} is either prone to the same
+limitations as cited above or requires local configuration in order to find the
+home to Call-Home.
+
+The "Join Registrar" defined by {{-BRSKI}} mitigates the cited problems and
+limitation by introducing "a representative of the domain that is configured,
+perhaps autonomically, to decide whether a new device is allowed to join the
+domain. The administrator of the domain interfaces with a Join Registrar (and
+Coordinator) to control this process. Typically a Join Registrar is "inside"
+its domain."
+
 # Summary of the Problem Statement
 
 Currently, the following gaps are identified:
@@ -158,12 +204,22 @@ Currently, the following gaps are identified:
   that is able to convey a filter expression and potentially other metadata
   required in the context of a YANG Subscribed Notifications application
   association.
-* no CoAP call home feature is standardized to support a popular variant of
+* no CoAP Call Home feature is standardized to support a popular variant of
   configured YANG subscriptions.
+* no general Call Home mechanism is standardized that enables the discovery
+  of "a home to Call Home" or that would be able to deal with "changing homes"
+  in a dynamic but secure manner.
 
 In addition to the identified gaps, the semantics of metadata - if there are any
 - that have to be conveyed to or from a YANG data store in order to subscribe to
 a (filtered) YANG module or data node are not identified.
+
+The problem statement could be summarized as follows:
+
+"There is no complete solution based on CoAP to enable a freshly unpacked YANG
+data store ("drop-shiped pledge", e.g. the cliche light bulb) to discover an
+appropriate home it can than Call-Home to in secure and trusted manner in order
+to push (un-)solicited subscribed notifications to."
 
 # Potential Approaches and Solutions
 
@@ -241,6 +297,13 @@ This usage scenario defines the Call Home procedure standardized in {{RFC8071}}
 as an additional capability of CoAP. DTLS or TLS state is initiated by the YANG
 data store and triggers a dynamic subscription procedure of the YANG client
 using the session initiated by the YANG data store.
+
+### Dynamic Home Discovery
+
+This usage scenario is based on the Bootstrapping Remote Secure Key
+Infrastructures I-D {{-BRSKI}} and EST over secure CoAP I-D {{-EST-coaps}} and
+requires the standardization of a general use of Join Registrars in the context
+of YANG data store that support YANG Push via static subscriptions.
 
 #  IANA considerations
 
