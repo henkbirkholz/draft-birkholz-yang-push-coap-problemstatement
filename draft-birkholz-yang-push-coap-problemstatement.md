@@ -46,7 +46,7 @@ author:
   country: USA
 - ins: E. Voit
   name: Eric Voit
-  org: Cisco System
+  org: Cisco Systems
   email: evoit@cisco.com
 
 normative:
@@ -166,7 +166,7 @@ example, TLS) is then used to the YANG client to initiate a subscription (i.e.
 the YANG client is initiating a dynamic subscription based on a pre-configured
 request retained and issued by the YANG data store).
 
-## Bootstrapping of Drop-Shiped Pledges
+## Bootstrapping of Drop-Shipped Pledges
 
 {{-BRSKI}} highlights that effectively "to literally 'pull yourself up by the
 bootstraps' is an impossible action. Similarly, the secure establishment of a
@@ -185,7 +185,7 @@ A Pledge in the context of {{-BRSKI}} is "the prospective device, which has
 an identity installed by a third-party (e.g., vendor, manufacturer or
 integrator)."
 
-A Pledge can be "drop-shiped", which refers to "the physical distribution of
+A Pledge can be "drop-shipped", which refers to "the physical distribution of
 equipment containing the 'factory default' configuration to a final destination.
 In zero-touch scenarios there is no staging or pre-configuration during
 drop-ship."
@@ -216,7 +216,8 @@ Currently, the following gaps are identified:
 * no CoAP Subscribe procedure for dynamic YANG subscriptions is standardized
   that is able to convey a filter expression and potentially other metadata
   required in the context of a YANG Subscribed Notifications application
-  association.
+  association. Analogously, new payload types (e.g. a FETCH payload media-type)
+  have to be defined.
 * no CoAP Call Home feature is standardized to support a popular variant of
   configured YANG subscriptions.
 * no general Call Home mechanism is standardized that enables the discovery
@@ -230,9 +231,9 @@ a (filtered) YANG module or data node are not identified.
 The problem statement could be summarized as follows:
 
 "There is no complete solution based on CoAP to enable a freshly unpacked YANG
-data store ("drop-shiped pledge", e.g. the cliche light bulb) to discover an
-appropriate home it can than Call-Home to in secure and trusted manner in order
-to push (un-)solicited subscribed notifications to."
+data store ("drop-shipped pledge", e.g. the cliche light bulb) to discover an
+appropriate home it can than Call-Home to in a secure and trusted manner in order
+to push (un-)solicited subscribed notifications."
 
 # Potential Approaches and Solutions
 
@@ -316,7 +317,7 @@ using the session initiated by the YANG data store.
 This usage scenario is based on the Bootstrapping Remote Secure Key
 Infrastructures I-D {{-BRSKI}} and EST over secure CoAP I-D {{-EST-coaps}} and
 requires the standardization of a general use of Join Registrars in the context
-of YANG data store that support YANG Push via static subscriptions.
+of YANG data stores that support YANG Push via static subscriptions.
 
 #  IANA considerations
 
@@ -330,7 +331,7 @@ via this document will.
 
 #  Acknowledgements
 
-Carsten Bormann, Klaus Hartke, Eric Voit
+Carsten Bormann, Klaus Hartke, Michel Veillette
 
 #  Change Log
 
