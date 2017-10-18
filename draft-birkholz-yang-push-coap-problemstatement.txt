@@ -2,18 +2,18 @@
 
 
 
-SACM Working Group                                           H. Birkholz
+NETCONF Working Group                                        H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
-Intended status: Standards Track                                 T. Thou
-Expires: April 13, 2018                                           Huawei
+Intended status: Informational                                   T. Zhou
+Expires: April 21, 2018                                           Huawei
                                                                   X. Liu
                                                                    Jabil
                                                                  E. Voit
                                                            Cisco Systems
-                                                        October 10, 2017
+                                                        October 18, 2017
 
 
-         YANG Push Operations for the CoAP Management Interface
+                     YANG Push Operations for CoMI
          draft-birkholz-yang-push-coap-problemstatement-latest
 
 Abstract
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 13, 2018.
+   This Internet-Draft will expire on April 21, 2018.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Birkholz, et al.         Expires April 13, 2018                 [Page 1]
+Birkholz, et al.         Expires April 21, 2018                 [Page 1]
 
-Internet-DrafYANG Push Operations for the CoAP Management I October 2017
+Internet-Draft                  CoMI Push                   October 2017
 
 
    (https://trustee.ietf.org/license-info) in effect on the date of
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Birkholz, et al.         Expires April 13, 2018                 [Page 2]
+Birkholz, et al.         Expires April 21, 2018                 [Page 2]
 
-Internet-DrafYANG Push Operations for the CoAP Management I October 2017
+Internet-Draft                  CoMI Push                   October 2017
 
 
 1.1.  Binary YANG transfer protocol
@@ -165,9 +165,9 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
 
-Birkholz, et al.         Expires April 13, 2018                 [Page 3]
+Birkholz, et al.         Expires April 21, 2018                 [Page 3]
 
-Internet-DrafYANG Push Operations for the CoAP Management I October 2017
+Internet-Draft                  CoMI Push                   October 2017
 
 
    The Observe option creates a small corresponding state on the server
@@ -221,9 +221,9 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
 
-Birkholz, et al.         Expires April 13, 2018                 [Page 4]
+Birkholz, et al.         Expires April 21, 2018                 [Page 4]
 
-Internet-DrafYANG Push Operations for the CoAP Management I October 2017
+Internet-Draft                  CoMI Push                   October 2017
 
 
    According to [I-D.ietf-anima-bootstrapping-keyinfra] the
@@ -277,9 +277,9 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
 
-Birkholz, et al.         Expires April 13, 2018                 [Page 5]
+Birkholz, et al.         Expires April 21, 2018                 [Page 5]
 
-Internet-DrafYANG Push Operations for the CoAP Management I October 2017
+Internet-Draft                  CoMI Push                   October 2017
 
 
       potentially other metadata required in the context of a YANG
@@ -333,9 +333,9 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
 
-Birkholz, et al.         Expires April 13, 2018                 [Page 6]
+Birkholz, et al.         Expires April 21, 2018                 [Page 6]
 
-Internet-DrafYANG Push Operations for the CoAP Management I October 2017
+Internet-Draft                  CoMI Push                   October 2017
 
 
 3.3.  Dynamic Subscriptions
@@ -389,9 +389,9 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
 
-Birkholz, et al.         Expires April 13, 2018                 [Page 7]
+Birkholz, et al.         Expires April 21, 2018                 [Page 7]
 
-Internet-DrafYANG Push Operations for the CoAP Management I October 2017
+Internet-Draft                  CoMI Push                   October 2017
 
 
    store.  I.e. the configuration would be including the YANG client IP
@@ -445,9 +445,9 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
 
-Birkholz, et al.         Expires April 13, 2018                 [Page 8]
+Birkholz, et al.         Expires April 21, 2018                 [Page 8]
 
-Internet-DrafYANG Push Operations for the CoAP Management I October 2017
+Internet-Draft                  CoMI Push                   October 2017
 
 
    [I-D.ietf-anima-bootstrapping-keyinfra]
@@ -501,9 +501,9 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
 
-Birkholz, et al.         Expires April 13, 2018                 [Page 9]
+Birkholz, et al.         Expires April 21, 2018                 [Page 9]
 
-Internet-DrafYANG Push Operations for the CoAP Management I October 2017
+Internet-Draft                  CoMI Push                   October 2017
 
 
    [I-D.ietf-netconf-zerotouch]
@@ -557,9 +557,9 @@ Authors' Addresses
 
 
 
-Birkholz, et al.         Expires April 13, 2018                [Page 10]
+Birkholz, et al.         Expires April 21, 2018                [Page 10]
 
-Internet-DrafYANG Push Operations for the CoAP Management I October 2017
+Internet-Draft                  CoMI Push                   October 2017
 
 
    Tianran Zhou
@@ -613,4 +613,4 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
 
-Birkholz, et al.         Expires April 13, 2018                [Page 11]
+Birkholz, et al.         Expires April 21, 2018                [Page 11]
