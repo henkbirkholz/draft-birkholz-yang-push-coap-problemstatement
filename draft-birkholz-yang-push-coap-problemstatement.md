@@ -1,13 +1,14 @@
 ---
-title: YANG Push Operations for the CoAP Management Interface
+title: YANG Push Operations for CoMI
+abbrev: CoMI Push
 docname: draft-birkholz-yang-push-coap-problemstatement-latest
-date: 2017-10-10
+date: 2017-10-18
 
 ipr: trust200902
-area: security
-wg: SACM Working Group
+area: ops
+wg: NETCONF Working Group
 kw: Internet-Draft
-cat: std
+cat: info
 
 coding: us-ascii
 pi:
@@ -26,7 +27,7 @@ author:
   code: '64295'
   city: Darmstadt
   country: Germany
-- ins: T. Thou
+- ins: T. Zhou
   name: Tianran Zhou
   org: Huawei
   abbrev: Huawei
