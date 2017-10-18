@@ -9,7 +9,7 @@ Expires: April 13, 2018                                           Huawei
                                                                   X. Liu
                                                                    Jabil
                                                                  E. Voit
-                                                            Cisco System
+                                                           Cisco Systems
                                                         October 10, 2017
 
 
@@ -73,7 +73,7 @@ Table of Contents
      1.2.  Device-Type Scope . . . . . . . . . . . . . . . . . . . .   3
      1.3.  Subscriptions via CoAP  . . . . . . . . . . . . . . . . .   3
      1.4.  Configured Subscriptions and Call-Home  . . . . . . . . .   4
-     1.5.  Bootstrapping of Drop-Shiped Pledges  . . . . . . . . . .   4
+     1.5.  Bootstrapping of Drop-Shipped Pledges . . . . . . . . . .   4
    2.  Summary of the Problem Statement  . . . . . . . . . . . . . .   5
    3.  Potential Approaches and Solutions  . . . . . . . . . . . . .   6
      3.1.  YANG subscription variants  . . . . . . . . . . . . . . .   6
@@ -212,7 +212,7 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
    subscription based on a pre-configured request retained and issued by
    the YANG data store).
 
-1.5.  Bootstrapping of Drop-Shiped Pledges
+1.5.  Bootstrapping of Drop-Shipped Pledges
 
    [I-D.ietf-anima-bootstrapping-keyinfra] highlights that effectively
    "to literally 'pull yourself up by the bootstraps' is an impossible
@@ -242,7 +242,7 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
    "the prospective device, which has an identity installed by a third-
    party (e.g., vendor, manufacturer or integrator)."
 
-   A Pledge can be "drop-shiped", which refers to "the physical
+   A Pledge can be "drop-shipped", which refers to "the physical
    distribution of equipment containing the 'factory default'
    configuration to a final destination.  In zero-touch scenarios there
    is no staging or pre-configuration during drop-ship."
@@ -283,7 +283,9 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
       potentially other metadata required in the context of a YANG
-      Subscribed Notifications application association.
+      Subscribed Notifications application association.  Analogously,
+      new payload types (e.g. a FETCH payload media-type) have to be
+      defined.
 
    o  no CoAP Call Home feature is standardized to support a popular
       variant of configured YANG subscriptions.
@@ -300,10 +302,10 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
    The problem statement could be summarized as follows:
 
    "There is no complete solution based on CoAP to enable a freshly
-   unpacked YANG data store ("drop-shiped pledge", e.g. the cliche light
-   bulb) to discover an appropriate home it can than Call-Home to in
-   secure and trusted manner in order to push (un-)solicited subscribed
-   notifications to."
+   unpacked YANG data store ("drop-shipped pledge", e.g. the cliche
+   light bulb) to discover an appropriate home it can than Call-Home to
+   in a secure and trusted manner in order to push (un-)solicited
+   subscribed notifications."
 
 3.  Potential Approaches and Solutions
 
@@ -327,8 +329,6 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
    and FETCH (i.e. by supporting the Observe option).  Both operations
    are viable candidates for creating a CoAP-based YANG Push mechanism
    for CoMI.
-
-
 
 
 
@@ -416,7 +416,7 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
    Infrastructures I-D [I-D.ietf-anima-bootstrapping-keyinfra] and EST
    over secure CoAP I-D [I-D.vanderstok-ace-coap-est] and requires the
    standardization of a general use of Join Registrars in the context of
-   YANG data store that support YANG Push via static subscriptions.
+   YANG data stores that support YANG Push via static subscriptions.
 
 4.  IANA considerations
 
@@ -430,7 +430,7 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 6.  Acknowledgements
 
-   Carsten Bormann, Klaus Hartke, Eric Voit
+   Carsten Bormann, Klaus Hartke, Michel Veillette
 
 7.  Change Log
 
@@ -509,8 +509,8 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
    [I-D.ietf-netconf-zerotouch]
               Watsen, K., Abrahamsson, M., and I. Farrer, "Zero Touch
               Provisioning for NETCONF or RESTCONF based Management",
-              draft-ietf-netconf-zerotouch-17 (work in progress),
-              September 2017.
+              draft-ietf-netconf-zerotouch-18 (work in progress),
+              October 2017.
 
    [I-D.vanderstok-ace-coap-est]
               Kumar, S., Stok, P., Kampanakis, P., Furuhed, M., and S.
@@ -581,7 +581,7 @@ Internet-DrafYANG Push Operations for the CoAP Management I October 2017
 
 
    Eric Voit
-   Cisco System
+   Cisco Systems
 
    Email: evoit@cisco.com
 
